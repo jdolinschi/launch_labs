@@ -3,9 +3,7 @@
     <div class="flex h-screen w-16 flex-col justify-between border-e bg-white">
       <div>
         <div class="inline-flex size-16 items-center justify-center">
-          <span
-              class="grid size-10 place-content-center rounded-lg bg-gray-100 text-xs text-gray-600"
-          >
+          <span class="grid size-10 place-content-center rounded-lg bg-gray-100 text-xs text-gray-600">
             L
           </span>
         </div>
@@ -16,6 +14,8 @@
               <a
                   href="#"
                   class="t group relative flex justify-center rounded-sm bg-blue-50 px-2 py-1.5 text-blue-700"
+                  @mouseenter="openPanel('general')"
+                  @mouseleave="closePanel"
               >
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -36,10 +36,7 @@
                       d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
                   />
                 </svg>
-
-                <span
-                    class="invisible absolute start-full top-1/2 ms-4 -translate-y-1/2 rounded-sm bg-gray-900 px-2 py-1.5 text-xs font-medium text-white group-hover:visible"
-                >
+                <span class="invisible absolute start-full top-1/2 ms-4 -translate-y-1/2 rounded-sm bg-gray-900 px-2 py-1.5 text-xs font-medium text-white group-hover:visible">
                   General
                 </span>
               </a>
@@ -50,6 +47,8 @@
                 <a
                     href="#"
                     class="group relative flex justify-center rounded-sm px-2 py-1.5 text-gray-500 hover:bg-gray-50 hover:text-gray-700"
+                    @mouseenter="openPanel('teams')"
+                    @mouseleave="closePanel"
                 >
                   <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -65,10 +64,7 @@
                         d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
                     />
                   </svg>
-
-                  <span
-                      class="invisible absolute start-full top-1/2 ms-4 -translate-y-1/2 rounded-sm bg-gray-900 px-2 py-1.5 text-xs font-medium text-white group-hover:visible"
-                  >
+                  <span class="invisible absolute start-full top-1/2 ms-4 -translate-y-1/2 rounded-sm bg-gray-900 px-2 py-1.5 text-xs font-medium text-white group-hover:visible">
                     Teams
                   </span>
                 </a>
@@ -78,6 +74,8 @@
                 <a
                     href="#"
                     class="group relative flex justify-center rounded-sm px-2 py-1.5 text-gray-500 hover:bg-gray-50 hover:text-gray-700"
+                    @mouseenter="openPanel('billing')"
+                    @mouseleave="closePanel"
                 >
                   <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -93,10 +91,7 @@
                         d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"
                     />
                   </svg>
-
-                  <span
-                      class="invisible absolute start-full top-1/2 ms-4 -translate-y-1/2 rounded-sm bg-gray-900 px-2 py-1.5 text-xs font-medium text-white group-hover:visible"
-                  >
+                  <span class="invisible absolute start-full top-1/2 ms-4 -translate-y-1/2 rounded-sm bg-gray-900 px-2 py-1.5 text-xs font-medium text-white group-hover:visible">
                     Billing
                   </span>
                 </a>
@@ -106,6 +101,8 @@
                 <a
                     href="#"
                     class="group relative flex justify-center rounded-sm px-2 py-1.5 text-gray-500 hover:bg-gray-50 hover:text-gray-700"
+                    @mouseenter="openPanel('invoices')"
+                    @mouseleave="closePanel"
                 >
                   <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -121,10 +118,7 @@
                         d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"
                     />
                   </svg>
-
-                  <span
-                      class="invisible absolute start-full top-1/2 ms-4 -translate-y-1/2 rounded-sm bg-gray-900 px-2 py-1.5 text-xs font-medium text-white group-hover:visible"
-                  >
+                  <span class="invisible absolute start-full top-1/2 ms-4 -translate-y-1/2 rounded-sm bg-gray-900 px-2 py-1.5 text-xs font-medium text-white group-hover:visible">
                     Invoices
                   </span>
                 </a>
@@ -134,6 +128,8 @@
                 <a
                     href="#"
                     class="group relative flex justify-center rounded-sm px-2 py-1.5 text-gray-500 hover:bg-gray-50 hover:text-gray-700"
+                    @mouseenter="openPanel('account')"
+                    @mouseleave="closePanel"
                 >
                   <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -149,10 +145,7 @@
                         d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
                     />
                   </svg>
-
-                  <span
-                      class="invisible absolute start-full top-1/2 ms-4 -translate-y-1/2 rounded-sm bg-gray-900 px-2 py-1.5 text-xs font-medium text-white group-hover:visible"
-                  >
+                  <span class="invisible absolute start-full top-1/2 ms-4 -translate-y-1/2 rounded-sm bg-gray-900 px-2 py-1.5 text-xs font-medium text-white group-hover:visible">
                     Account
                   </span>
                 </a>
@@ -182,10 +175,7 @@
                   d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"
               />
             </svg>
-
-            <span
-                class="invisible absolute start-full top-1/2 ms-4 -translate-y-1/2 rounded-sm bg-gray-900 px-2 py-1.5 text-xs font-medium text-white group-hover:visible"
-            >
+            <span class="invisible absolute start-full top-1/2 ms-4 -translate-y-1/2 rounded-sm bg-gray-900 px-2 py-1.5 text-xs font-medium text-white group-hover:visible">
               Logout
             </span>
           </button>
@@ -193,8 +183,24 @@
       </div>
     </div>
 
-    <div class="flex h-screen flex-1 flex-col justify-between border-e bg-white">
-      <div class="px-4 py-6">
+    <!-- General Panel -->
+    <div
+        class="flex h-screen flex-col justify-between border-e bg-white transition-all duration-300 ease-in-out absolute left-16"
+        :class="{
+        'w-0': activePanel !== 'general',
+        'w-[10%]': activePanel === 'general'
+      }"
+        @mouseleave="closePanel"
+        @mouseenter="keepOpen"
+    >
+      <div
+          class="px-4 py-6 overflow-hidden"
+          :class="{
+          'opacity-0': activePanel !== 'general',
+          'opacity-100': activePanel === 'general'
+        }"
+          v-show="activePanel === 'general'"
+      >
         <ul class="mt-14 space-y-1">
           <li>
             <a
@@ -204,14 +210,35 @@
               General
             </a>
           </li>
+        </ul>
+      </div>
+    </div>
 
+    <!-- Teams Panel -->
+    <div
+        class="flex h-screen flex-col justify-between border-e bg-white transition-all duration-300 ease-in-out absolute left-16"
+        :class="{
+        'w-0': activePanel !== 'teams',
+        'w-[10%]': activePanel === 'teams'
+      }"
+        @mouseleave="closePanel"
+        @mouseenter="keepOpen"
+    >
+      <div
+          class="px-4 py-6 overflow-hidden"
+          :class="{
+          'opacity-0': activePanel !== 'teams',
+          'opacity-100': activePanel === 'teams'
+        }"
+          v-show="activePanel === 'teams'"
+      >
+        <ul class="mt-14 space-y-1">
           <li>
             <details class="group [&_summary::-webkit-details-marker]:hidden">
               <summary
                   class="flex cursor-pointer items-center justify-between rounded-lg px-4 py-2 text-gray-500 hover:bg-gray-100 hover:text-gray-700"
               >
                 <span class="text-sm font-medium"> Teams </span>
-
                 <span class="shrink-0 transition duration-300 group-open:-rotate-180">
                   <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -227,7 +254,6 @@
                   </svg>
                 </span>
               </summary>
-
               <ul class="mt-2 space-y-1 px-4">
                 <li>
                   <a
@@ -237,7 +263,6 @@
                     Banned Users
                   </a>
                 </li>
-
                 <li>
                   <a
                       href="#"
@@ -249,7 +274,29 @@
               </ul>
             </details>
           </li>
+        </ul>
+      </div>
+    </div>
 
+    <!-- Billing Panel -->
+    <div
+        class="flex h-screen flex-col justify-between border-e bg-white transition-all duration-300 ease-in-out absolute left-16"
+        :class="{
+        'w-0': activePanel !== 'billing',
+        'w-[10%]': activePanel === 'billing'
+      }"
+        @mouseleave="closePanel"
+        @mouseenter="keepOpen"
+    >
+      <div
+          class="px-4 py-6 overflow-hidden"
+          :class="{
+          'opacity-0': activePanel !== 'billing',
+          'opacity-100': activePanel === 'billing'
+        }"
+          v-show="activePanel === 'billing'"
+      >
+        <ul class="mt-14 space-y-1">
           <li>
             <a
                 href="#"
@@ -258,7 +305,29 @@
               Billing
             </a>
           </li>
+        </ul>
+      </div>
+    </div>
 
+    <!-- Invoices Panel -->
+    <div
+        class="flex h-screen flex-col justify-between border-e bg-white transition-all duration-300 ease-in-out absolute left-16"
+        :class="{
+        'w-0': activePanel !== 'invoices',
+        'w-[10%]': activePanel === 'invoices'
+      }"
+        @mouseleave="closePanel"
+        @mouseenter="keepOpen"
+    >
+      <div
+          class="px-4 py-6 overflow-hidden"
+          :class="{
+          'opacity-0': activePanel !== 'invoices',
+          'opacity-100': activePanel === 'invoices'
+        }"
+          v-show="activePanel === 'invoices'"
+      >
+        <ul class="mt-14 space-y-1">
           <li>
             <a
                 href="#"
@@ -267,14 +336,35 @@
               Invoices
             </a>
           </li>
+        </ul>
+      </div>
+    </div>
 
+    <!-- Account Panel -->
+    <div
+        class="flex h-screen flex-col justify-between border-e bg-white transition-all duration-300 ease-in-out absolute left-16"
+        :class="{
+        'w-0': activePanel !== 'account',
+        'w-[10%]': activePanel === 'account'
+      }"
+        @mouseleave="closePanel"
+        @mouseenter="keepOpen"
+    >
+      <div
+          class="px-4 py-6 overflow-hidden"
+          :class="{
+          'opacity-0': activePanel !== 'account',
+          'opacity-100': activePanel === 'account'
+        }"
+          v-show="activePanel === 'account'"
+      >
+        <ul class="mt-14 space-y-1">
           <li>
             <details class="group [&_summary::-webkit-details-marker]:hidden">
               <summary
                   class="flex cursor-pointer items-center justify-between rounded-lg px-4 py-2 text-gray-500 hover:bg-gray-100 hover:text-gray-700"
               >
                 <span class="text-sm font-medium"> Account </span>
-
                 <span class="shrink-0 transition duration-300 group-open:-rotate-180">
                   <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -290,7 +380,6 @@
                   </svg>
                 </span>
               </summary>
-
               <ul class="mt-2 space-y-1 px-4">
                 <li>
                   <a
@@ -300,7 +389,6 @@
                     Details
                   </a>
                 </li>
-
                 <li>
                   <a
                       href="#"
@@ -309,12 +397,11 @@
                     Security
                   </a>
                 </li>
-
                 <li>
                   <form action="#">
                     <button
                         type="submit"
-                        class="w-full rounded-lg px-4 py-2 [text-align:_inherit] text-sm font-medium text-gray-500 hover:bg-gray-100 hover:text-gray-700"
+                        class="w-full rounded-lg px-4 py-2 text-sm font-medium text-gray-500 hover:bg-gray-100 hover:text-gray-700"
                     >
                       Logout
                     </button>
@@ -328,3 +415,47 @@
     </div>
   </div>
 </template>
+
+<script lang="ts">
+import { defineComponent, ref } from 'vue'
+
+export default defineComponent({
+  name: 'SidebarMenu',
+  setup() {
+    const activePanel = ref<string | null>(null)
+    let timeoutId: number | null = null
+
+    const openPanel = (panel: string) => {
+      if (timeoutId) {
+        clearTimeout(timeoutId)
+      }
+      activePanel.value = panel
+    }
+
+    const keepOpen = () => {
+      if (timeoutId) {
+        clearTimeout(timeoutId)
+      }
+    }
+
+    const closePanel = () => {
+      timeoutId = setTimeout(() => {
+        activePanel.value = null
+      }, 200)
+    }
+
+    return {
+      activePanel,
+      openPanel,
+      closePanel,
+      keepOpen
+    }
+  }
+})
+</script>
+
+<style scoped>
+.transition-all {
+  transition-property: all;
+}
+</style>
