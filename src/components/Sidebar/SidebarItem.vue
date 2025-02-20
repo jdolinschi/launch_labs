@@ -5,6 +5,8 @@
       :class="isActive ? 'bg-blue-50 text-blue-700' : 'text-gray-500 hover:bg-gray-50 hover:text-gray-700'"
       @mouseenter="$emit('open-panel', id)"
       @mouseleave="$emit('close-panel')"
+      draggable="true"
+      @dragstart="$emit('drag-start', id)"
   >
     <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -29,23 +31,11 @@ import { defineComponent } from 'vue'
 export default defineComponent({
   name: 'SidebarItem',
   props: {
-    id: {
-      type: String,
-      required: true
-    },
-    label: {
-      type: String,
-      required: true
-    },
-    icon: {
-      type: String,
-      required: true
-    },
-    isActive: {
-      type: Boolean,
-      default: false
-    }
+    id: { type: String, required: true },
+    label: { type: String, required: true },
+    icon: { type: String, required: true },
+    isActive: { type: Boolean, default: false }
   },
-  emits: ['open-panel', 'close-panel']
+  emits: ['open-panel', 'close-panel', 'drag-start']
 })
 </script>

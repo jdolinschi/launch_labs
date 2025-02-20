@@ -1,12 +1,13 @@
-<script setup lang="ts">
-import Sidebar from './components/Sidebar/Sidebar.vue'
-</script>
-
 <template>
-  <div>
-    <Sidebar />
-  </div>
+  <sidebar />
 </template>
 
-<style scoped>
-</style>
+<script lang="ts">
+import { defineComponent } from 'vue'
+import Sidebar from './components/Sidebar/Sidebar.vue'
+
+export default defineComponent({
+  name: 'App',
+  components: { Sidebar }
+})
+</script>

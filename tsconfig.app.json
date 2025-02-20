@@ -2,13 +2,18 @@
   "extends": "@vue/tsconfig/tsconfig.dom.json",
   "compilerOptions": {
     "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.app.tsbuildinfo",
-
     /* Linting */
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
-    "noUncheckedSideEffectImports": true
+    "noUncheckedSideEffectImports": true,
+    /* Added for @ alias and type support */
+    "baseUrl": ".",           // Base directory for path resolution
+    "paths": {
+      "@/*": ["src/*"]        // Maps @ to src directory
+    },
+    "types": ["vite/client"]  // Include Vite client types
   },
   "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.vue"]
 }

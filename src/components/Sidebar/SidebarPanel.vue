@@ -1,19 +1,13 @@
 <template>
   <div
-      class="flex h-screen flex-col justify-between border-e bg-white transition-all duration-300 ease-in-out absolute left-16"
-      :class="{
-      'w-0': !isActive,
-      'w-[25%]': isActive
-    }"
+      class="flex h-screen flex-col justify-between border-e bg-white transition-all duration-300 ease-in-out absolute left-16 z-10"
+      :class="{ 'w-0': !isActive, 'w-[25%]': isActive }"
       @mouseleave="$emit('close-panel')"
       @mouseenter="$emit('keep-open')"
   >
     <div
         class="px-4 py-6 overflow-hidden"
-        :class="{
-        'opacity-0': !isActive,
-        'opacity-100': isActive
-      }"
+        :class="{ 'opacity-0': !isActive, 'opacity-100': isActive }"
         v-show="isActive"
     >
       <ul class="mt-14 space-y-1">
@@ -24,7 +18,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
+import { defineComponent, watch } from 'vue'
 
 export default defineComponent({
   name: 'SidebarPanel',
@@ -34,6 +28,12 @@ export default defineComponent({
       required: true
     }
   },
-  emits: ['close-panel', 'keep-open']
+  emits: ['close-panel', 'keep-open'],
+  setup(props) {
+    // Debug log to check if isActive changes
+    watch(() => props.isActive, (newVal) => {
+      console.log('Panel isActive:', newVal)
+    })
+  }
 })
 </script>
