@@ -22,14 +22,14 @@
             <ul class="space-y-1 border-t border-gray-100 pt-4">
               <li>
                 <sidebar-item
-                    id="teams"
-                    label="Teams"
-                    :icon="teamsIcon"
-                    :is-active="activePanel === 'teams'"
+                    id="launches"
+                    label="Launches"
+                    :icon="launchesIcon"
+                    :is-active="activePanel === 'launches'"
                     @open-panel="openPanel"
                     @close-panel="closePanel"
                     draggable="true"
-                    @dragstart="dragStart('teams')"
+                    @dragstart="dragStart('launches')"
                 />
               </li>
               <li>
@@ -87,23 +87,11 @@
     <sidebar-panel :is-active="activePanel === 'general'" @close-panel="closePanel" @keep-open="keepOpen">
       <li><a href="#" class="block rounded-lg bg-gray-100 px-4 py-2 text-sm font-medium text-gray-700">General</a></li>
     </sidebar-panel>
-    <sidebar-panel :is-active="activePanel === 'teams'" @close-panel="closePanel" @keep-open="keepOpen">
-      <li>
-        <details class="group [&_summary::-webkit-details-marker]:hidden">
-          <summary class="flex cursor-pointer items-center justify-between rounded-lg px-4 py-2 text-gray-500 hover:bg-gray-100 hover:text-gray-700">
-            <span class="text-sm font-medium">Teams</span>
-            <span class="shrink-0 transition duration-300 group-open:-rotate-180">
-              <svg xmlns="http://www.w3.org/2000/svg" class="size-5" viewBox="0 0 20 20" fill="currentColor">
-                <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
-              </svg>
-            </span>
-          </summary>
-          <ul class="mt-2 space-y-1 px-4">
-            <li><a href="#" class="block rounded-lg px-4 py-2 text-sm font-medium text-gray-500 hover:bg-gray-100 hover:text-gray-700">Banned Users</a></li>
-            <li><a href="#" class="block rounded-lg px-4 py-2 text-sm font-medium text-gray-500 hover:bg-gray-100 hover:text-gray-700">Calendar</a></li>
-          </ul>
-        </details>
-      </li>
+    <sidebar-panel :is-active="activePanel === 'launches'" @close-panel="closePanel" @keep-open="keepOpen">
+      <li><a href="#" class="block rounded-lg px-4 py-2 text-sm font-medium text-gray-500 hover:bg-gray-100 hover:text-gray-700">IFT-4</a></li>
+      <li><a href="#" class="block rounded-lg px-4 py-2 text-sm font-medium text-gray-500 hover:bg-gray-100 hover:text-gray-700">IFt-5</a></li>
+      <li><a href="#" class="block rounded-lg px-4 py-2 text-sm font-medium text-gray-500 hover:bg-gray-100 hover:text-gray-700">IFt-6</a></li>
+      <li><a href="#" class="block rounded-lg px-4 py-2 text-sm font-medium text-gray-500 hover:bg-gray-100 hover:text-gray-700">IFt-7</a></li>
     </sidebar-panel>
     <sidebar-panel :is-active="activePanel === 'billing'" @close-panel="closePanel" @keep-open="keepOpen">
       <li><a href="#" class="block rounded-lg px-4 py-2 text-sm font-medium text-gray-500 hover:bg-gray-100 hover:text-gray-700">Billing</a></li>
@@ -159,7 +147,7 @@ export default defineComponent({
     const store = useCanvasStore()
 
     const generalIcon = `<path stroke-linecap="round" stroke-linejoin="round" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" /><path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />`
-    const teamsIcon = `<path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />`
+    const launchesIcon = `<path stroke-linecap="round" stroke-linejoin="round" d="M15.44,85.83c1.26-0.98,3.08-0.75,4.06,0.51c0.98,1.26,0.75,3.08-0.51,4.06l-13.1,10.17l-0.1,13.39l15.78-0.88l8.73-13.87 c0.85-1.35,2.63-1.75,3.98-0.9c1.35,0.85,1.75,2.63,0.9,3.98l-9.47,15.05c-0.47,0.81-1.33,1.37-2.34,1.43L3.04,119.9l0,0 c-0.06,0-0.11,0-0.17,0c-1.59-0.01-2.88-1.3-2.87-2.89l0.13-17.65c-0.07-0.93,0.32-1.88,1.11-2.5L15.44,85.83L15.44,85.83z M40.28,53.81c6.59-19.69,15.46-33.64,27.95-42.44C81.2,2.25,97.86-1.21,119.69,0.37c1.51,0.11,2.66,1.35,2.69,2.83 c2.11,23.64-2.47,40.4-12.25,53.1C100.71,68.51,86.6,76.77,69.07,83.7v23.07c0,1.13-0.65,2.11-1.6,2.59l-17.84,11.02 c-1.35,0.84-3.13,0.42-3.97-0.94c-0.22-0.36-0.36-0.75-0.41-1.14l0,0c-3.95-30.19-8.15-31.64-32.83-40.18 C9.48,77.1,6.29,76,4.14,75.24c-1.5-0.53-2.29-2.18-1.76-3.69c0.11-0.32,0.28-0.61,0.48-0.86l11.76-16.77 c0.59-0.84,1.54-1.27,2.5-1.23v0L40.28,53.81L40.28,53.81z M84.68,25.72c3.36,0,6.4,1.36,8.6,3.56c2.2,2.2,3.56,5.24,3.56,8.6 c0,3.36-1.36,6.4-3.56,8.6c-2.2,2.2-5.24,3.56-8.6,3.56c-3.36,0-6.4-1.36-8.6-3.56c-2.2-2.2-3.56-5.24-3.56-8.6 c0-3.36,1.36-6.4,3.56-8.6C78.28,27.08,81.32,25.72,84.68,25.72L84.68,25.72z M90.48,32.08c-1.48-1.48-3.53-2.4-5.8-2.4 c-2.26,0-4.31,0.92-5.8,2.4c-1.48,1.48-2.4,3.53-2.4,5.8c0,2.26,0.92,4.31,2.4,5.8c1.48,1.48,3.53,2.4,5.8,2.4 c2.26,0,4.31-0.92,5.8-2.4c1.48-1.48,2.4-3.53,2.4-5.8C92.88,35.61,91.96,33.56,90.48,32.08L90.48,32.08z M71.55,16.1 c-11.81,8.32-20.18,21.94-26.43,41.43c-0.34,1.29-1.54,2.22-2.93,2.15l-23.77-1.16L9.64,71.05c1.86,0.65,3.29,1.15,4.66,1.62 c26.32,9.1,31.79,10.99,36.07,40.47l12.91-7.97V81.74h0.01c0-1.16,0.71-2.25,1.85-2.69c17.46-6.72,31.41-14.6,40.41-26.28 c8.59-11.15,12.75-25.95,11.26-46.79C97.58,4.92,82.89,8.13,71.55,16.1L71.55,16.1z" />`
     const billingIcon = `<path stroke-linecap="round" stroke-linejoin="round" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" />`
     const invoicesIcon = `<path stroke-linecap="round" stroke-linejoin="round" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" />`
     const accountIcon = `<path stroke-linecap="round" stroke-linejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />`
@@ -182,7 +170,7 @@ export default defineComponent({
       closePanel,
       keepOpen,
       generalIcon,
-      teamsIcon,
+      launchesIcon,
       billingIcon,
       invoicesIcon,
       accountIcon,
