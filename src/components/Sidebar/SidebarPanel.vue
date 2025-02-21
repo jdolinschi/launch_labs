@@ -18,7 +18,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, watch } from 'vue'
+import { defineComponent } from 'vue'
 
 export default defineComponent({
   name: 'SidebarPanel',
@@ -28,12 +28,6 @@ export default defineComponent({
       required: true
     }
   },
-  emits: ['close-panel', 'keep-open'],
-  setup(props) {
-    // Debug log to check if isActive changes
-    watch(() => props.isActive, (newVal) => {
-      console.log('Panel isActive:', newVal)
-    })
-  }
+  emits: ['close-panel', 'keep-open']
 })
 </script>

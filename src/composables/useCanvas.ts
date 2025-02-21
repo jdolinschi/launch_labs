@@ -1,4 +1,5 @@
-import { ref, onMounted } from 'vue'
+import { ref, onMounted, onUnmounted } from 'vue'
+import type { Ref } from 'vue'
 import interact from 'interactjs'
 import { useCanvasStore } from '@/stores/canvasStore'
 
@@ -30,10 +31,12 @@ export function useCanvas(boxRef: Ref<HTMLElement | null>, boxId: string) {
         return { x: newX, y: newY }
     }
 
+    let interactable: interact.Interactable | null = null
+
     onMounted(() => {
         if (!boxRef.value) return
 
-        interact(boxRef.value)
+        interactable = interact(boxRef.value)
             .draggable({
                 modifiers: [
                     interact.modifiers.snap({
@@ -101,5 +104,12 @@ export function useCanvas(boxRef: Ref<HTMLElement | null>, boxId: string) {
                     }
                 }
             })
+    })
+
+    // Cleanup interact.js instance when the component is unmounted.
+    onUnmounted(() => {
+        if (interactable && boxRef.value) {
+            interactable.unset()
+        }
     })
 }

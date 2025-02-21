@@ -15,6 +15,7 @@ export const useCanvasStore = defineStore('canvas', () => {
 
     const addBox = (content: string) => {
         const id = `${content}-${Date.now()}`
+        console.log("Adding box with id:", id)
         boxes.value.push({ id, x: 100, y: 100, width: 200, height: 150, content })
     }
 
